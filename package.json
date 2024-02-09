@@ -1,15 +1,16 @@
 {
   "name": "eat-n-split",
-  "homepage": "https://gsharma101.github.io/Eat-N-Split",
+  "homepage": "https://github.com/gsharma101/Eat-N-Split",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "dev": "vite",
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build"
+    "build": "vite build",
+    "deploy": "gh-pages -d build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.2.0",
