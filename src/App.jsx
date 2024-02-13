@@ -36,15 +36,22 @@ function FriendList() {
   );
 }
 
-function Friend({ friend }) {
-  return <li>
-    <img src={friend.image} alt={friend.name} />
-    <h3>{friend.name}</h3>
+function Friend({ friend, onSelection, selectedFriend }) {
+  const isSelected = selectedFriend?.id === friend.id;
 
-    {friend.balance < 0 && (<p className="red">You owe {friend.name} ${Maths.abs(friend.balance)}€</p>)}
+  return (
+    <li>
+      <img src={friend.image} alt={friend.name} />
+      <h3>{friend.name}</h3>
 
-    {friend.balance > 0 && (<p className="green">You owe {friend.name} ${Maths.abs(friend.balance)}€</p>)}
-
-    {friend.balance === 0 && (<p>You owe {friend.name} ${Maths.abs(friend.balance)}€</p>)}
-  </li>;
+      {friend.balance < 0 && (<p className="red">
+        You owe {friend.name} {Math.abs(friend.balance)} €
+      </p>)}
+      {friend.balance > 0 && (<p className="green">
+        You owe {friend.name} owes you {Math.abs(friend.balance)} €
+      </p>
+      )}
+      {friend.balance === 0 && <p> You and {friend.name} are even</p>}
+    </li>
+  );
 }
