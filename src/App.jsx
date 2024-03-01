@@ -19,6 +19,8 @@ const initialFriends = [
   },
 ];
 
+// ? main Function 
+
 export default function App() {
   return <div className="app">
     <div className="sidebar">
